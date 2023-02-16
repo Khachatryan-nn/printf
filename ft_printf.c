@@ -6,20 +6,22 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:44:14 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/02/16 11:56:25 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/02/16 19:59:51 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_percentage(char type, va_list arg)
+int	ft_percentage(char type, va_list arg)
 {
 	if (type == 'c')
 		return (ft_putchr(va_arg(arg, int)));
 	else if (type == 's')
-		return (ft_putstr(va_arg(arg, char *)));
+		return (ft_putstr(va_arg(arg, char *), 0));
 	else if (type == 'd' || type == 'i')
 		return (ft_putnbr(va_arg(arg, int)));
+	else if (type == 'u')
+		return (ft_putnbrun(va_arg(arg, unsigned int)));
 	else if (type == 'x' || type == 'X')
 		return (ft_putnbrhex(va_arg(arg, unsigned int), type));
 	else if (type == 'p')
@@ -31,8 +33,8 @@ int ft_percentage(char type, va_list arg)
 
 int	ft_printf(const char *arg, ...)
 {
-	int	len;
-	int	i;
+	int		len;
+	int		i;
 	va_list	args;
 
 	i = 0;
@@ -53,15 +55,3 @@ int	ft_printf(const char *arg, ...)
 	va_end(args);
 	return (len);
 }
-
-// #include <stdio.h>
-// #include <stdlib.h>
-
-// int	main(void)
-// {
-// 	char *a = (char *)malloc(10);
-// 	printf(":%d\n", printf("Hello %p", a));
-// 	printf(":%d\n", ft_printf("Hello %p", a));
-// 	//printf("%d\n", printf("original:Hello %c %s %d %i %x %X %p %%d\n", ' ', "World!", 10, 10, 3000000, 3000000, a));
-// 	//printf("%d\n", ft_printf(" ft_copy:Hello %c %s %d %i %x %X %p %%d", ' ', "World!", 10, 10, 3000000, 3000000, a));
-// }

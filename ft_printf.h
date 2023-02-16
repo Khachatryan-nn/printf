@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 21:19:13 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/02/16 11:56:06 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/02/16 18:47:28 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct arg_list
 int	ft_printf(const char *arg, ...);
 int	ft_percentage(char type, va_list arg);
 int	ft_putchr(char c);
-int	ft_putstr(char const *s);
+int	ft_putstr(char *s, int t);
 int	ft_putnbr(int nb);
 int	ft_putnbrun(unsigned int nb);
 int	ft_putnbrhex(unsigned int nb, char c);

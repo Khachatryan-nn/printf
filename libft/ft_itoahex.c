@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 11:23:43 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/02/15 20:13:32 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/02/16 19:03:13 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ char	*ft_itoahex(unsigned int n, char c)
 	int		lenght;
 
 	i = 0;
-	lenght = ft_lenght(n);
+	if (n == 0)
+		lenght = 1;
+	else
+		lenght = ft_lenght(n);
 	p = (char *)malloc(sizeof(char) * (lenght + 1));
 	if (!p)
 		return (0);
