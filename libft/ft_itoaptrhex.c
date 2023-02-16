@@ -6,10 +6,9 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:58:34 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/02/15 20:13:58 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/02/16 09:46:11 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 #include <stdlib.h>

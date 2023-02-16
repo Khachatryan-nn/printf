@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:44:14 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/02/15 21:17:11 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/02/16 11:56:25 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 int ft_percentage(char type, va_list arg)
 {
 	if (type == 'c')
-		return (ft_putchr((char) va_arg(arg, char *)));
+		return (ft_putchr(va_arg(arg, int)));
 	else if (type == 's')
-		return (ft_putstr((char *) va_arg(arg, char *)));
+		return (ft_putstr(va_arg(arg, char *)));
 	else if (type == 'd' || type == 'i')
-		return (ft_putnbr((int) va_arg(arg, char *)));
+		return (ft_putnbr(va_arg(arg, int)));
 	else if (type == 'x' || type == 'X')
-		return (ft_putnbrhex((int) va_arg(arg, char *), type));
+		return (ft_putnbrhex(va_arg(arg, unsigned int), type));
 	else if (type == 'p')
-		return (ft_putptrhex((char *) va_arg(arg, char *)));
+		return (ft_putptrhex(va_arg(arg, char *)));
 	else if (type == '%')
 		return (ft_putchr('%'));
 	return (0);
