@@ -6,7 +6,7 @@
 /*   By: tikhacha <tikhacha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:44:14 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/02/16 19:59:51 by tikhacha         ###   ########.fr       */
+/*   Updated: 2023/02/28 18:54:42 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ int	ft_printf(const char *arg, ...)
 		if (arg[i] == '%')
 		{
 			i++;
-			len += ft_percentage (arg[i++], args);
+			if (arg[i] != '\0')
+				len += ft_percentage (arg[i++], args);
 		}
 	}
 	va_end(args);
